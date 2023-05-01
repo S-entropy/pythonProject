@@ -22,7 +22,7 @@ def save_upload_file(uploaded_file):
         f.write()
     return st.success('Saved file : {} in tmp'.format(uploaded_file.name))
 
-st.title(' Upload')
+st.title('Upload')
 menu = ['Home', 'Dataset', 'DocumentFiles', 'About']
 choice = st.sidebar.selectbox('Menu', menu)
 
@@ -42,7 +42,6 @@ elif choice == 'Dataset':
     data_file = st.file_uploader('Upload CSV', type=['csv'])
     if data_file is not None:
         st.wwite(type(data_file))
-
         file_details = {'filename': data_file.name,
                        'filetype': data_file.type,
                        'filesize': data_file.size}
@@ -60,7 +59,7 @@ elif choice == 'DocumentFiles':
                        'filetype': docs_file.type,
                        'filesize': docs_file.size}
             st.write(file_details)
-            if docs_file.tyype == 'text/plain':
+            if docs_file.type == 'text/plain':
                 raw_text = str(docs_file.read(), 'utf-8')
                 st.write(raw_text)
             elif docs_file.type == 'applicaton/pdf':
