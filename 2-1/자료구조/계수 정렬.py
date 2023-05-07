@@ -28,6 +28,4 @@ def CSWithNegN(l):
         for j in range(cntl[i]):
             ret.append(i+m)
     return ret
-print(countingSort([1,3,4,5,2,1,8,2,3,4,4,2,3,4,4,5]))
-print(CSWithMaxv([1,3,4,5,2,1,8,2,3,4,4,2,3,4,4,5],8))
-print(CSWithNegN([-1,0,3,4,5,2,-10,5,2,5,2,4,4,2,3,6]))
+print(countingSort([9, 8, 7, 6, 5, 4, 3, 2, 1]))

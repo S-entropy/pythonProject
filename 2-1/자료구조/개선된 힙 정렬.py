@@ -1,14 +1,12 @@
 import heapq
 import math
 def heapSort(x):
-    print('heap')
     heapq.heapify(x)
     l = []
     while len(x):
         l.append(heapq.heappop(x))
     return l
 def insertSort(x):
-    print('ins')
     for i in range(1, len(x)):
         j = i - 1
         key = x[i]
@@ -32,6 +30,6 @@ def goodSort(x):
         return insertSort(x)
     else:
         return heapSort(x)
-l = [1, 9, 8, 5, 6, 7]
+l = [9,8,7,6,5,4,3,2,1]
 l = goodSort(l)
 print(l)
