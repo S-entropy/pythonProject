@@ -134,7 +134,7 @@ elif menu == '할일':
 
     def delete_todo(*args, **kargs):
         # print(type(args[0]))
-        db.deleteTOdo(args[0])
+        db.deleteTodo(args[0])
 
 
     todos = db.readTodos()
