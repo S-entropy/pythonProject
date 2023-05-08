@@ -108,7 +108,7 @@ class TodoDB:
         c.execute(f'DELETE FROM users WHERE id={id}')
         TodoDB.con.commit()
 
-    def updateUser(self, id):
+    def updateUser(self, values):
         c = TodoDB.con.cursor()
         c.execute(f'UPDATE users SET user_name=?, user_pw=?, '
                   f'user_email=?, user_mobile=? WHERE id=?', values)
