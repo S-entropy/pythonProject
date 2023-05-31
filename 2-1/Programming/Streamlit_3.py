@@ -19,7 +19,7 @@ def read_pdf(file):
 
 def save_upload_file(uploaded_file):
     with open(os.path.join('tmp', uploaded_file), 'wb') as f:
-        f.write()
+        f.write(uploaded_file.getbuffer())
     return st.success('Saved file : {} in tmp'.format(uploaded_file.name))
 
 st.title('Upload')
