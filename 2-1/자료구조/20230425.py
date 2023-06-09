@@ -25,7 +25,7 @@ for i in range(n):
 print(ans)
 from itertools import permutations
 def string_permutations(s):
-    perms = permutations(s)
+    perms = permutations(s) # <class 'itertools.permutations'> 안에 tuple
     sorted_perms = sorted([''.join(p) for p in perms])
     return sorted_perms
 

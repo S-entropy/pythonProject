@@ -21,8 +21,7 @@ def find_time_occurrence_list(seq,k):
         else:
             break
     for i in range(index_some_k-1,-1,-1):
-        if seq[i]==k:
-            count+=1
+        if seq[i]==k:            count+=1
         else:
             break
     return count

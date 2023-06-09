@@ -27,7 +27,6 @@ for i in range(0, n_sample):
    input_data[i] = sin_y[i:i+n_time].reshape(-1,1)
    correct_data[i] = sin_y[i+n_time:i+n_time+1]
 
-
 # RNN층
 class SimpleRNNLayer:
    def __init__(self, n_upper, n):
@@ -167,8 +166,7 @@ for i in range(epochs):
        print("Epoch:"+str(i+1)+"/"+str(epochs),"Error:"+str(error))
        predicted = input_data[0].reshape(-1).tolist()
        for i in range(n_sample):
-           x = np.array(predicted[-n_time:]).reshape(1, n_time,
-                                                     1)
+           x = np.array(predicted[-n_time:]).reshape(1, n_time, 1)
            y = predict(x)
            predicted.append(float(y[0,0]))
        plt.plot(range(len(sin_y)), sin_y.tolist(), label="Correct")
