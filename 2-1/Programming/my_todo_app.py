@@ -132,13 +132,13 @@ elif menu == '할일':
         db.updateTaskState(args)
 
     def change_content(*args, **kargs):
-        db.updateTodoContent((args[0], st.session_state[args[1]]))
+        db.updateTodoContent((args[0], st.session_state['content'+str(args[0])]))
 
     def change_date(*args, **kargs):
-        db.updateTodoDate((args[0], st.session_state[args[1]].strftime('%Y-%m-%d')))
+        db.updateTodoDate((args[0], st.session_state['date'+str(args[0])].strftime('%Y-%m-%d')))
 
     def change_time(*args, **kargs):
-        db.updateTodoTime((args[0], st.session_state[args[1]].strftime('%H:%M')))
+        db.updateTodoTime((args[0], st.session_state['time'+str(args[0])].strftime('%H:%M')))
 
     def delete_todo(*args, **kargs):
         # print(type(args[0]))
@@ -159,21 +159,21 @@ elif menu == '할일':
             value=todo[1],
             on_change=change_content,
             label_visibility='collapsed',
-            args=(todo[0], 'content'+str(todo[0])),
+            args=(todo[0], ),
             key='content'+str(todo[0]))
         col3.date_input(
             str(todo[0]),
             value=datetime.datetime.strptime(todo[2], '%Y-%m-%d').date(),
             on_change=change_date,
             label_visibility='collapsed',
-            args=(todo[0], 'date'+str(todo[0])),
+            args=(todo[0], ),
             key='date'+str(todo[0]))
         col4.time_input(
             str(todo[0]),
             value=datetime.datetime.strptime(todo[3], '%H:%M').time(),
             on_change=change_time,
             label_visibility='collapsed',
-            args=(todo[0], 'time'+str(todo[0])),
+            args=(todo[0], ),
             key='time'+str(todo[0]))
         col5.text(todo[5][0:19])
         col6.button(

@@ -130,6 +130,7 @@ list_pop()
 queue_pop()
 deque_pop()
 '''
+# 개선된 버블정렬
 def bubbleSort(x):
     length = len(x)-1
     eidx = length
